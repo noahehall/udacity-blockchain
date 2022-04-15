@@ -1,5 +1,6 @@
 {
   "name": "udacity-blockchain",
+  "type": "module",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/noahehall/udacity-blockchain/issues"
   },
-  "homepage": "https://github.com/noahehall/udacity-blockchain#readme"
+  "homepage": "https://github.com/noahehall/udacity-blockchain#readme",
+  "dependencies": {
+    "crypto-js": "4.1.1"
+  },
+  "devDependencies": {
+    "eslint": "8.13.0"
+  }
 }
