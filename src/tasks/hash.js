@@ -2,7 +2,7 @@
 // @see https://cryptojs.gitbook.io/docs/
 // @see https://github.com/udacity/nd1309_hashing/blob/master/app.js
 
-import crypto from "crypto-js";
+import crypto from 'crypto-js';
 
 const { SHA256 } = crypto;
 
@@ -21,10 +21,10 @@ const { SHA256 } = crypto;
  * Variables: Do not change variable values to be able to answer the quiz
  */
 
-const data1 = "Blockchain Rock!";
+const data1 = 'Blockchain Rock!';
 const dataObject = {
   id: 1,
-  body: "With Object Works too",
+  body: 'With Object Works too',
   time: new Date().getTime().toString().slice(0, -3),
 };
 
@@ -41,7 +41,7 @@ function generateHash(obj) {
 }
 
 console.log(`SHA256 Hash: ${generateHash(data1)}`);
-console.log("************************************");
+console.log('************************************');
 console.log(`SHA256 Hash: ${generateHash(dataObject)}`);
 
 /**

@@ -1,30 +1,29 @@
 import { Router } from 'express';
+import { Block } from '../blockchain';
 
 // mount on /submitStar
 export const submitStarRouter = Router();
 
-submitStarRouter.get('/', async (req, res) => {
+submitStarRouter.post('/', async (req, res) => {
   /*
-  this.app.post("/submitstar", async (req, res) => {
-            if(req.body.address && req.body.message && req.body.signature && req.body.star) {
-                const address = req.body.address;
-                const message = req.body.message;
-                const signature = req.body.signature;
-                const star = req.body.star;
-                try {
-                    let block = await this.blockchain.submitStar(address, message, signature, star);
-                    if(block){
-                        return res.status(200).json(block);
-                    } else {
-                        return res.status(500).send("An error happened!");
-                    }
-                } catch (error) {
-                    return res.status(500).send(error);
-                }
-            } else {
-                return res.status(500).send("Check the Body Parameter!");
-            }
-        });
-            */
-  res.status(200).send('submitStarRouter todo');
+  {
+         "dec": "68° 52' 56.9",
+         "ra": "16h 29m 1.0s",
+         "story": "Testing the story 4"
+     }
+     */
+  const { address, message, signature, star } = req.body;
+
+  if (!address || !message || !signature || !star)
+    return res.status(500).send('Check the Body Parameter!');
+
+  try {
+    const block = await req.blockchain.submitStar({ address, message, signature, star });
+
+    return block instanceof Block
+      ? res.status(200).json(block)
+      : res.status(500).send('An error happened!');
+  } catch (error) {
+    return res.status(500).send(error);
+  }
 });
