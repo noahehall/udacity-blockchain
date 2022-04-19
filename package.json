@@ -12,10 +12,10 @@
     "test:ing": "pnpm test -- --watch",
     "test:prod": "NODE_ENV=production pnpm test -- -ci",
     "build": "NODE_ENV=production pnpm tsc",
-    "dev": "pnpm tsc-watch --noClear --onSuccess \"pnpm start\"",
+    "dev:p1": "pnpm tsc-watch --noClear --onSuccess \"pnpm start:p1\"",
     "eslint": "eslint 'src/**/*.ts' --fix",
     "pretty": "prettier --config .prettierrc 'src/**/*.ts' --write",
-    "start": "NODE_OPTIONS=\"$npm_package_config_NODE_OPTIONS\" node dist/index.js"
+    "start:p1": "NODE_OPTIONS=\"$npm_package_config_NODE_OPTIONS\" node dist/project-1/index.js"
   },
   "repository": {
     "type": "git",
@@ -29,7 +29,11 @@
   "homepage": "https://github.com/noahehall/udacity-blockchain#readme",
   "dependencies": {
     "bitcoinjs-lib": "github:bitcoinjs/bitcoinjs-lib",
+    "bitcoinjs-message": "github:bitcoinjs/bitcoinjs-message",
+    "body-parser": "1.20.0",
     "crypto-js": "4.1.1",
+    "express": "4.17.3",
+    "morgan": "1.10.0",
     "solc": "0.8.13"
   },
   "devDependencies": {
