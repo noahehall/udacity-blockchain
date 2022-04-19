@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/noahehall/udacity-blockchain#readme",
   "dependencies": {
+    "bitcoinjs-lib": "github:bitcoinjs/bitcoinjs-lib",
     "crypto-js": "4.1.1",
     "solc": "0.8.13"
   },
