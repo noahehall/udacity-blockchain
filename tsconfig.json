@@ -1,7 +1,7 @@
 // @see https://www.typescriptlang.org/tsconfig
 {
   "include": ["src/**/*.ts"], // include all files in the src directory
-  "exclude": ["**/src/*.test.ts"], // run tests on dist dir without annotations
+  "exclude": ["src/**/*.test.ts"],
   "compilerOptions": {
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
@@ -20,7 +20,7 @@
     "typeRoots": ["src/@types", "node_modules/@types"],
     "checkJs": false,
     "sourceMap": true,
-    "outDir": "./dist",
+    "outDir": "dist",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,

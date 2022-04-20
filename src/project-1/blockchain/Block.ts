@@ -8,23 +8,24 @@
  *  All the exposed methods should return a Promise to allow all the methods
  *  run asynchronous.
  */
+import SHA256 from 'crypto-js/sha256';
+import web3 from 'web3';
 
-// const SHA256 = require('crypto-js/sha256');
-// const hex2ascii = require('hex2ascii');
+const { utils } = web3;
 
 export class Block {
-  hash: null | string;
+  hash: string;
   height: number;
   body: string;
   time: number;
-  previousBlockHash: null | string;
+  previousBlockHash: string;
   // Constructor - argument data will be the object containing the transaction data
   constructor(data) {
-    this.hash = null; // Hash of the block
+    this.hash = ''; // Hash of the block
     this.height = 0; // Block Height (consecutive number of each block)
-    this.body = Buffer.from(JSON.stringify(data)).toString('hex'); // Will contain the transactions stored in the block, by default it will encode the data
+    this.body = utils.toHex(JSON.stringify(data));
     this.time = 0; // Timestamp for the Block creation
-    this.previousBlockHash = null; // Reference to the previous Block Hash
+    this.previousBlockHash = ''; // Reference to the previous Block Hash
   }
 
   /**
@@ -39,14 +40,14 @@ export class Block {
    *  5. Resolve true or false depending if it is valid or not.
    *  Note: to access the class values inside a Promise code you need to create an auxiliary value `let self = this;`
    */
-  validate() {
-    return new Promise((resolve, reject) => {
-      // Save in auxiliary variable the current block hash
-      // Recalculate the hash of the Block
-      // Comparing if the hashes changed
-      // Returning the Block is not valid
-      // Returning the Block is valid
-    });
+  async validate() {
+    return this.hash === (await this.calculateHash());
+  }
+
+  async calculateHash() {
+    const { height, body, time, previousBlockHash } = this;
+
+    return SHA256(JSON.stringify({ height, body, time, previousBlockHash })).toString();
   }
 
   /**
@@ -58,10 +59,9 @@ export class Block {
    *  3. Resolve with the data and make sure that you don't need to return the data for the `genesis block`
    *     or Reject with an error.
    */
-  getBData() {
-    // Getting the encoded data saved in the Block
-    // Decoding the data to retrieve the JSON representation of the object
-    // Parse the data to an object to be retrieve.
-    // Resolve with the data if the object isn't the Genesis block
+  async getBData() {
+    if (this.height === 0) return false;
+
+    return JSON.parse(utils.hexToUtf8(this.body));
   }
 }
