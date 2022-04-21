@@ -14,7 +14,7 @@
     "noImplicitThis": true,
     "noPropertyAccessFromIndexSignature": false,
     //prev
-    "target": "es6",
+    "target": "es2017",
     "module": "ESNext",
     "moduleResolution": "node",
     "typeRoots": ["src/@types", "node_modules/@types"],
