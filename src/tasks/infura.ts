@@ -6,6 +6,9 @@ const api = new Web3(url);
 
 const randomAddress = '0x00000000219ab540356cBB839Cbe05303d7705Fa';
 
-const balance = await api.eth.getBalance(randomAddress);
+const stuff: { [x: string]: any } = {};
+stuff.balanceInWei = await api.eth.getBalance(randomAddress);
+stuff.balanceInEither = await api.utils.fromWei(stuff.balanceInWei, 'ether');
+stuff.transactionAccount = await api.eth.getTransactionCount(randomAddress);
 
-console.info('\n\n account balance', balance);
+console.table(stuff);
