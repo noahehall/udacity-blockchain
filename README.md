@@ -10,6 +10,4 @@
 
 > pnpm i
 
-- start project 1 on localhost:8000
-
-> pnpm dev:p1
+- point package.json.scripts.dev to whatever
