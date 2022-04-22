@@ -12,11 +12,12 @@
     "test:ing": "pnpm test -- --watch",
     "test:prod": "NODE_ENV=production pnpm test -- -ci",
     "build": "NODE_ENV=production pnpm tsc",
-    "dev": "rm -rf ./dist/* && pnpm tsc-watch --noClear --onSuccess \"pnpm start:infura\"",
+    "dev": "rm -rf ./dist/* && pnpm tsc-watch --noClear --onSuccess \"pnpm start:ganache\"",
     "eslint": "eslint 'src/**/*.ts' --fix",
     "pretty": "prettier --config .prettierrc 'src/**/*.ts' --write",
     "start:p1": "NODE_OPTIONS=\"$npm_package_config_NODE_OPTIONS\" node dist/index.js",
-    "start:infura": "NODE_OPTIONS=\"$npm_package_config_NODE_OPTIONS\" node dist/tasks/infura.js"
+    "start:infura": "NODE_OPTIONS=\"$npm_package_config_NODE_OPTIONS\" node dist/tasks/infura.js",
+    "start:ganache": "NODE_OPTIONS=\"$npm_package_config_NODE_OPTIONS\" node dist/tasks/infura.js"
   },
   "repository": {
     "type": "git",
