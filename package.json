@@ -17,7 +17,7 @@
     "pretty": "prettier --config .prettierrc 'src/**/*.ts' --write",
     "start:p1": "NODE_OPTIONS=\"$npm_package_config_NODE_OPTIONS\" node dist/index.js",
     "start:infura": "NODE_OPTIONS=\"$npm_package_config_NODE_OPTIONS\" node dist/tasks/infura.js",
-    "start:ganache": "NODE_OPTIONS=\"$npm_package_config_NODE_OPTIONS\" node dist/tasks/infura.js"
+    "start:ganache": "NODE_OPTIONS=\"$npm_package_config_NODE_OPTIONS\" node dist/tasks/ganache.js"
   },
   "repository": {
     "type": "git",

@@ -17,6 +17,8 @@ const stuff: { [x: string]: any } = {};
 stuff.balanceInWei = await api.eth.getBalance(nodeAddress);
 stuff.balanceInEither = await api.utils.fromWei(stuff.balanceInWei, 'ether');
 stuff.transactionAccount = await api.eth.getTransactionCount(nodeAddress);
+stuff.accounts = await api.eth.getAccounts();
+
 // doesnt seem to work
 // const batContract = new api.eth.Contract(batAbi);
 // batContract.methods.poop
