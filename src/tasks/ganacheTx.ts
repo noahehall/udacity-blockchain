@@ -46,3 +46,8 @@ console.info('0x' + serializedTx.toString('hex'));
 // throws err,
 // pretty sure its because I didnt set the right chain when creating the tx
 api.eth.sendSignedTransaction('0x' + serializedTx.toString('hex')).then(console.log);
+
+// TODO
+// web3.eth.getGasPrice([callback])
+// eb3.eth.getUncle(blockHashOrBlockNumber, uncleIndex [, returnTransactionObjects] [, callback])
+// web3.eth.getBlockTransactionCount(blockHashOrBlockNumber [, callback])
