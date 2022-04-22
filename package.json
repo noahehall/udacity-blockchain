@@ -31,6 +31,7 @@
   },
   "homepage": "https://github.com/noahehall/udacity-blockchain#readme",
   "dependencies": {
+    "@ethereumjs/common": "2.6.4",
     "@ethereumjs/tx": "3.5.1",
     "bitcoinjs-lib": "github:bitcoinjs/bitcoinjs-lib",
     "bitcoinjs-message": "github:bitcoinjs/bitcoinjs-message",
