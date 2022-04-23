@@ -51,3 +51,4 @@ api.eth.sendSignedTransaction('0x' + serializedTx.toString('hex')).then(console.
 // web3.eth.getGasPrice([callback])
 // eb3.eth.getUncle(blockHashOrBlockNumber, uncleIndex [, returnTransactionObjects] [, callback])
 // web3.eth.getBlockTransactionCount(blockHashOrBlockNumber [, callback])
+// web3.eth.getTransactionCount(someAddress).then(console.log);
