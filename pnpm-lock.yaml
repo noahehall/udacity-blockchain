@@ -3,6 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@ethereumjs/common': 2.6.4
   '@ethereumjs/tx': 3.5.1
+  '@openzeppelin/contracts': 4.5.0
   '@types/jest': 27.4.0
   '@types/node': 17.0.21
   '@typescript-eslint/eslint-plugin': 5.14.0
@@ -29,6 +30,7 @@ specifiers:
 dependencies:
   '@ethereumjs/common': 2.6.4
   '@ethereumjs/tx': 3.5.1
+  '@openzeppelin/contracts': 4.5.0
   bitcoinjs-lib: github.com/bitcoinjs/bitcoinjs-lib/59b21162a2c4645c64271ca004c7a3755a3d72fb
   bitcoinjs-message: github.com/bitcoinjs/bitcoinjs-message/c43430f4c03c292c719e7801e425d887cbdf7464
   body-parser: 1.20.0
@@ -994,6 +996,10 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
     dev: true
+
+  /@openzeppelin/contracts/4.5.0:
+    resolution: {integrity: sha512-fdkzKPYMjrRiPK6K4y64e6GzULR7R7RwxSigHS8DDp7aWDeoReqsQI+cxHV1UuhAqX69L1lAaWDxenfP+xiqzA==}
+    dev: false
 
   /@sindresorhus/is/0.14.0:
     resolution: {integrity: sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==}
