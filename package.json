@@ -37,6 +37,7 @@
     "bitcoinjs-message": "github:bitcoinjs/bitcoinjs-message",
     "body-parser": "1.20.0",
     "crypto-js": "4.1.1",
+    "ethers": "5.6.4",
     "express": "4.17.3",
     "ganache": "7.0.4",
     "morgan": "1.10.0",
